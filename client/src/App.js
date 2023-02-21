@@ -29,7 +29,7 @@ function App() {
     const messages = chatLogNew.map((message) => message.message).join("\n");
 
     const response = await fetch("https://chat-gpt-api-xi.vercel.app/", {
-      method: "POST",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
