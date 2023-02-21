@@ -56,7 +56,7 @@ app.post("/", async (req, res) => {
 
   let operandSearch = await runIndex(message);
 
-  const basePromptPrefix = `This is a conversation between the YouTuber Siraj Raval and a stranger.\nRelevant information that Siraj knows:\n${operandSearch}`;
+  const basePromptPrefix = `This is a conversation between the me, Karthi and a stranger.\nRelevant information that Karthi knows:\n${operandSearch}`;
 
   const response = await openai.createCompletion({
     model: "text-davinci-003",
