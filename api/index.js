@@ -25,7 +25,7 @@ app.use(require("morgan")("dev"));
 // Routing
 
 // Primary Open AI Route
-app.post("/", async (req, res) => {
+app.post("https://openai.com/api/", async (req, res) => {
   const { message } = req.body;
 
   const runIndex = async () => {
@@ -58,7 +58,7 @@ app.post("/", async (req, res) => {
 
   const basePromptPrefix = `This is a conversation between the me, Karthi and a stranger.\nRelevant information that Karthi knows:\n${operandSearch}`;
   console.log(basePromptPrefix)
-  
+
   const response = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: `${basePromptPrefix}\n\nStranger:${message}\n\nKarthi:`,
