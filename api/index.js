@@ -55,7 +55,8 @@ app.post("/", async (req, res) => {
   };
 
   let operandSearch = await runIndex(message);
-
+  console.log("Below the symatic result : ")
+  console.log(operandSearch)
   const basePromptPrefix = `This is a conversation between the me Karthi and a stranger.\nRelevant information that Karthi knows:\n${operandSearch}`;
 
   const response = await openai.createCompletion({
