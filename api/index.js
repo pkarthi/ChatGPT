@@ -25,7 +25,7 @@ app.use(require("morgan")("dev"));
 // Routing
 
 // Primary Open AI Route
-app.get("/", async (req, res) => {
+app.post("/", async (req, res) => {
   const { message } = req.body;
 
   const runIndex = async () => {
@@ -68,7 +68,6 @@ app.get("/", async (req, res) => {
     message: response.data.choices[0].text,
   });
 });
-
 
 // Get Models Route
 
